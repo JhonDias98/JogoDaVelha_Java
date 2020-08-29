@@ -1,6 +1,7 @@
 package br.com.jogodavelha.core;
 
 import br.com.jogodavelha.Constants;
+import br.com.jogodavelha.ui.UI;
 
 public class Game {
 	
@@ -8,6 +9,8 @@ public class Game {
 	Player[] players = new Player[Constants.SYMBOL_PLAYERS.length];
 	
 	public void play() {
+		UI.printGameTitle();
 		
+		UI.readInput("Nome do Jogador");
 	}
 }
