@@ -5,8 +5,8 @@ import br.com.jogodavelha.ui.UI;
 
 public class Game {
 	
-	Board board = new Board();
-	Player[] players = new Player[Constants.SYMBOL_PLAYERS.length];
+	private Board board = new Board();
+	private Player[] players = new Player[Constants.SYMBOL_PLAYERS.length];
 	
 	public void play() {
 		UI.printGameTitle();

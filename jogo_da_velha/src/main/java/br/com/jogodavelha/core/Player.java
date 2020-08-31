@@ -1,15 +1,49 @@
 package br.com.jogodavelha.core;
 
+import br.com.jogodavelha.ui.UI;
+
 public class Player {
-	String name;
-	Board board;
-	char symbol;
+	private String name;
+	private Board board;
+	private char symbol;
 	
-	Move inputMove() {
-		return null;
+	public Player(String name, Board board, char symbol) {
+		this.name = name;
+		this.board = board;
+		this.symbol = symbol;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+
+	public char getSymbol() {
+		return symbol;
+	}
+
+	public void setSymbol(char symbol) {
+		this.symbol = symbol;
+	}
+
+	private Move inputMove() {
+		String moveStr = UI.readInput("Jogador " + name + "=>");
+		return new Move(moveStr);
 	}
 	
-	void play() {
-		
+	public void play() {
+		Move move = inputMove();
+		board.play(this, move);
 	}
 }
